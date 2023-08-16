@@ -1,41 +1,25 @@
 // GraphIterator.cs
 //
-// © 2022 FESB in cooperation with Zoraja Consulting. All rights reserved.
+// © 2023.
 
-namespace LeetCodePractice.Console.Graphs;
+namespace LeetCodePractice.Console.DataStructures.Graphs;
 
-public class GraphIterator
+public class GraphIterator<TNode, TValue> where TNode : IGraphNode<TNode, TValue>
 {
-    private GraphNode? _current;
+    private IGraphNode<TNode, TValue>? _current;
 
-    private readonly Queue<GraphNode> _connectedNodesToVisit = new();
-    private readonly HashSet<GraphNode> _visited = new();
+    private readonly Queue<IGraphNode<TNode, TValue>> _connectedNodesToVisit = new();
+    private readonly HashSet<IGraphNode<TNode, TValue>> _visited = new();
 
-    public GraphIterator(GraphNode root)
+    public GraphIterator(IGraphNode<TNode, TValue> root)
     {
         _current = root;
     }
 
-    public int Next()
+    public IGraphNode<TNode, TValue> NextNode()
     {
         if (_current is null)
-        {
             throw new Exception("Empty");
-        }
-
-        var value = _current.Value;
-
-        MoveNext();
-
-        return value;
-    }
-
-    public GraphNode NextNode()
-    {
-        if (_current is null)
-        {
-            throw new Exception("Empty");
-        }
 
         var value = _current;
 
@@ -63,9 +47,7 @@ public class GraphIterator
         while (_connectedNodesToVisit.TryDequeue(out var connectedNode))
         {
             if (_visited.Contains(connectedNode))
-            {
                 continue;
-            }
 
             _current = connectedNode;
             break;

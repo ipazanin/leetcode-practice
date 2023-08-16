@@ -1,12 +1,12 @@
-// Dijkstra.cs
+// WeightedGraphDijkstraAlgorithm.cs
 //
-// © 2022 FESB in cooperation with Zoraja Consulting. All rights reserved.
+// © 2023.
 
 using System.Numerics;
 
 namespace LeetCodePractice.Console.WeightedGraphs;
 
-public static class Dijkstra
+public static class WeightedGraphDijkstraAlgorithm
 {
     public static IReadOnlyDictionary<Vertex<TValue, TWeight>, TWeight> GetShortestPathTable<TValue, TWeight>(
         Vertex<TValue, TWeight> sourceVertex)

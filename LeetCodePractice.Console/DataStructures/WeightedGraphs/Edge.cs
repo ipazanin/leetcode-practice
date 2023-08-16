@@ -1,6 +1,6 @@
 // Edge.cs
 //
-// © 2022 FESB in cooperation with Zoraja Consulting. All rights reserved.
+// © 2023.
 
 using System.Numerics;
 

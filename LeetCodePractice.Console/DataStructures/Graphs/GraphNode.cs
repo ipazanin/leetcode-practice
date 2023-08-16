@@ -1,10 +1,12 @@
 // GraphNode.cs
 //
-// © 2022 FESB in cooperation with Zoraja Consulting. All rights reserved.
+// © 2023.
+
+using LeetCodePractice.Console.DataStructures.Graphs;
 
 namespace LeetCodePractice.Console.Graphs;
 
-public class GraphNode
+public class GraphNode : IGraphNode<GraphNode, int>
 {
     public GraphNode(int value)
     {
@@ -13,5 +15,5 @@ public class GraphNode
 
     public int Value { get; }
 
-    public ISet<GraphNode> ConnectedNodes { get; } = new HashSet<GraphNode>();
+    public List<GraphNode> ConnectedNodes { get; } = new();
 }
