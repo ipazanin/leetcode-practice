@@ -1,6 +1,7 @@
 // GlobalUsings.cs
 //
-// © 2022 FESB in cooperation with Zoraja Consulting. All rights reserved.
+// © 2023.
+
 
 global using LeetCodePractice.Console.WeightedGraphs;
 global using LeetCodePractice.Console.Trees;
