@@ -8,23 +8,18 @@ public class Solution
 {
     public int MaxProduct(int[] nums)
     {
-        var maxProductValue = int.MinValue;
-        var productValue = 1;
-        var numberOfNegativeElements = nums.Count(num => num < 0);
-
-        for (var i = 0; i < nums.Length; i++)
+        var ans = nums[0];
+        var length = nums.Length;
+        var product = 1;
+        var productReversed = 1;
+        for (var i = 0; i < length; i++)
         {
-            var number = nums[i];
-            if (number == 0)
-            {
-                productValue = 1;
-                continue;
-            }
-
-            if ()
-
-            var currentProductValue = productValue * number;
-
+            // reset to 1 when the product becomes zero
+            product = (product == 0 ? 1 : product) * nums[i];
+            productReversed = (productReversed == 0 ? 1 : productReversed) * nums[length - 1 - i];
+            ans = Math.Max(ans, Math.Max(product, productReversed));
         }
+
+        return ans;
     }
 }

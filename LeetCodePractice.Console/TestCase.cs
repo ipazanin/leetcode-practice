@@ -25,18 +25,18 @@ public class TestCase<TResult, TInput>
     {
         var actualResult = Method(Input);
 
-        if (!Result.Equals(actualResult))
+        if (!Result!.Equals(actualResult))
         {
             var inputString = Input switch
             {
                 Array array => string.Join(',', array.OfType<object>()),
-                _ => Input.ToString(),
+                _ => Input!.ToString(),
             };
 
             var actualResultString = actualResult switch
             {
                 Array array => string.Join(',', array.OfType<object>()),
-                _ => actualResult.ToString(),
+                _ => actualResult!.ToString(),
             };
 
             var resultString = Result switch
