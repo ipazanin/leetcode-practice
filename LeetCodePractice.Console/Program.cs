@@ -8,12 +8,7 @@ public static class Program
 {
     public static void Main()
     {
-        var testCases = new[]
-        {
-            new TestCase<string, string, string>("BANC", "ADOBECODEBANC", "ABC", new LeetCodeTasks.MinimumWindowSubstring.Solution().MinWindow),
-        };
-
-        foreach (var testCase in testCases)
+        foreach (var testCase in LeetCodeTasks.MinimumWindowSubstring.Solution.GetTestCases())
         {
             try
             {

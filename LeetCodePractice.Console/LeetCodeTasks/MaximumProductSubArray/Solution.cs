@@ -12,7 +12,7 @@ public class Solution
         var length = nums.Length;
         var product = 1;
         var productReversed = 1;
-        
+
         for (var i = 0; i < length; i++)
         {
             // reset to 1 when the product becomes zero
