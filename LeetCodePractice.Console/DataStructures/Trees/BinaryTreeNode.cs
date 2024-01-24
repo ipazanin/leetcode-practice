@@ -22,11 +22,11 @@ public class BinaryTreeNode
         this.right = right;
     }
 
-    public static BinaryTreeNode? CreateFromArray(IReadOnlyList<int?> values)
+    public static BinaryTreeNode CreateFromArray(IReadOnlyList<int?> values)
     {
         if (values.Count == 0 || !values[0].HasValue)
         {
-            return null;
+            throw new Exception("Invalid tree");
         }
 
         var root = new BinaryTreeNode(values[0]!.Value);
