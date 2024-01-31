@@ -64,7 +64,6 @@ public class Solution
     {
         yield return new TestCase<string, string, string>("", "A", "AA", new Solution().MinWindow);
         yield return new TestCase<string, string, string>("BANC", "ADOBECODEBANC", "ABC", new Solution().MinWindow);
-
     }
 
     private static bool DoesWindowCoverAllLetters(Dictionary<char, int> lettersMap)
