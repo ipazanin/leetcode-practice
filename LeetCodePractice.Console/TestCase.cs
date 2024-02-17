@@ -17,6 +17,21 @@ public abstract class TestCase
             _ => data?.ToString() ?? string.Empty,
         };
     }
+
+    protected static bool IsResultEqual<T>(T result, T expected)
+    {
+        if (result is Array resultArray && expected is Array expectedArray)
+        {
+            if (resultArray.Length != expectedArray.Length)
+            {
+                return false;
+            }
+
+            return Enumerable.SequenceEqual(resultArray.OfType<object>(), expectedArray.OfType<object>());
+        }
+
+        return result?.Equals(expected) ?? false;
+    }
 }
 
 public class TestCase<TResult, TInput> : TestCase
@@ -38,7 +53,7 @@ public class TestCase<TResult, TInput> : TestCase
     {
         var actualResult = Method(Input);
 
-        if (Result!.Equals(actualResult))
+        if (IsResultEqual(Result, actualResult))
         {
             return;
         }
@@ -68,7 +83,7 @@ public class TestCase<TResult, TInput1, TInput2> : TestCase
     {
         var actualResult = Method(Input1, Input2);
 
-        if (Result!.Equals(actualResult))
+        if (IsResultEqual(Result, actualResult))
         {
             return;
         }
@@ -100,7 +115,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3> : TestCase
     {
         var actualResult = Method(Input1, Input2, Input3);
 
-        if (Result!.Equals(actualResult))
+        if (IsResultEqual(Result, actualResult))
         {
             return;
         }
@@ -134,7 +149,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4> : TestCase
     {
         var actualResult = Method(Input1, Input2, Input3, Input4);
 
-        if (Result!.Equals(actualResult))
+        if (IsResultEqual(Result, actualResult))
         {
             return;
         }
@@ -171,7 +186,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4, TInput5> : Te
     {
         var actualResult = Method(Input1, Input2, Input3, Input4, Input5);
 
-        if (Result!.Equals(actualResult))
+        if (IsResultEqual(Result, actualResult))
         {
             return;
         }
