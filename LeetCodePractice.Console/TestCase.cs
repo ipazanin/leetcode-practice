@@ -160,7 +160,6 @@ public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4> : TestCase
     }
 }
 
-
 public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4, TInput5> : TestCase
 {
     public TestCase(TResult result, TInput1 input1, TInput2 input2, TInput3 input3, TInput4 input4, TInput5 input5, Func<TInput1, TInput2, TInput3, TInput4, TInput5, TResult> method)
