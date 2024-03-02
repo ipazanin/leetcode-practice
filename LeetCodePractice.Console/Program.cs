@@ -8,7 +8,7 @@ public static class Program
 {
     public static void Main()
     {
-        foreach (var testCase in LeetCodePractice.Console.LeetCodeTasks.FurthestBuildingYouCanReach.Solution.GetTestCases())
+        foreach (var testCase in LeetCodeTasks.SquaresOfSortedArray.Solution.GetTestCases())
         {
             try
             {
