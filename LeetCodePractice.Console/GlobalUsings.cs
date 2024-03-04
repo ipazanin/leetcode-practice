@@ -6,4 +6,5 @@ global using LeetCodePractice.Console.WeightedGraphs;
 global using LeetCodePractice.Console.Trees;
 global using LeetCodePractice.Console.Lists;
 global using LeetCodePractice.Console.Graphs;
+global using LeetCodePractice.Console.Utilities;
 global using LeetCodePractice.Console;

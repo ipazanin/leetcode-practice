@@ -8,7 +8,7 @@ public static class Program
 {
     public static void Main()
     {
-        foreach (var testCase in LeetCodeTasks.RemoveNthNodeFromEndOfList.Solution.GetTestCases())
+        foreach (var testCase in LeetCodeTasks.BagOfTokens.Solution.GetTestCases())
         {
             try
             {
