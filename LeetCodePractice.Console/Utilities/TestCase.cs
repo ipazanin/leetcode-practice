@@ -4,8 +4,9 @@
 
 using System.Diagnostics;
 using System.Globalization;
+using LeetCodePractice.Console.DataStructures.Lists;
 
-namespace LeetCodePractice.Console;
+namespace LeetCodePractice.Console.Utilities;
 
 public abstract class TestCase
 {
@@ -22,12 +23,15 @@ public abstract class TestCase
     {
         if (result is Array resultArray && expected is Array expectedArray)
         {
-            if (resultArray.Length != expectedArray.Length)
-            {
-                return false;
-            }
-
-            return Enumerable.SequenceEqual(resultArray.OfType<object>(), expectedArray.OfType<object>());
+            return resultArray.OfType<object>().SequenceEqual(expectedArray.OfType<object>());
+        }
+        else if (result is ListNode resultNode && expected is ListNode expectedNode)
+        {
+            return ListNodeValueComparer.Instance.Equals(resultNode, expectedNode);
+        }
+        else if (result is null && expected is null)
+        {
+            return true;
         }
 
         return result?.Equals(expected) ?? false;
@@ -54,9 +58,7 @@ public class TestCase<TResult, TInput> : TestCase
         var actualResult = Method(Input);
 
         if (IsResultEqual(Result, actualResult))
-        {
             return;
-        }
 
         var message = $"Input: {FormatInputOutputForDisplay(Input)} generated result: {FormatInputOutputForDisplay(actualResult)} instead of: {FormatInputOutputForDisplay(Result)}";
 
@@ -84,9 +86,7 @@ public class TestCase<TResult, TInput1, TInput2> : TestCase
         var actualResult = Method(Input1, Input2);
 
         if (IsResultEqual(Result, actualResult))
-        {
             return;
-        }
 
         var message = $"Inputs: {FormatInputOutputForDisplay(Input1)}, {FormatInputOutputForDisplay(Input2)} generated result: {FormatInputOutputForDisplay(actualResult)} instead of: {FormatInputOutputForDisplay(Result)}";
 
@@ -116,9 +116,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3> : TestCase
         var actualResult = Method(Input1, Input2, Input3);
 
         if (IsResultEqual(Result, actualResult))
-        {
             return;
-        }
 
         var message = $"Inputs: {FormatInputOutputForDisplay(Input1)}, {FormatInputOutputForDisplay(Input2)}, {FormatInputOutputForDisplay(Input3)} generated result: {FormatInputOutputForDisplay(actualResult)} instead of: {FormatInputOutputForDisplay(Result)}";
 
@@ -150,9 +148,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4> : TestCase
         var actualResult = Method(Input1, Input2, Input3, Input4);
 
         if (IsResultEqual(Result, actualResult))
-        {
             return;
-        }
 
         var message = $"Inputs: {FormatInputOutputForDisplay(Input1)}, {FormatInputOutputForDisplay(Input2)}, {FormatInputOutputForDisplay(Input3)}, {FormatInputOutputForDisplay(Input4)} generated result: {FormatInputOutputForDisplay(actualResult)} instead of: {FormatInputOutputForDisplay(Result)}";
 
@@ -186,9 +182,7 @@ public class TestCase<TResult, TInput1, TInput2, TInput3, TInput4, TInput5> : Te
         var actualResult = Method(Input1, Input2, Input3, Input4, Input5);
 
         if (IsResultEqual(Result, actualResult))
-        {
             return;
-        }
 
         var message = $"Inputs: {FormatInputOutputForDisplay(Input1)}, {FormatInputOutputForDisplay(Input2)}, {FormatInputOutputForDisplay(Input3)}, {FormatInputOutputForDisplay(Input4)}, {FormatInputOutputForDisplay(Input5)} generated result: {FormatInputOutputForDisplay(actualResult)} instead of: {FormatInputOutputForDisplay(Result)}";
 

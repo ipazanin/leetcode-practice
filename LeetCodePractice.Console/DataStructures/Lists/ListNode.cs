@@ -15,7 +15,7 @@ public class ListNode
         this.next = next;
     }
 
-    public static ListNode? CreateFromArray(IEnumerable<int> values)
+    public static ListNode CreateFromArray(IEnumerable<int> values)
     {
         ListNode? current = null;
 
@@ -24,7 +24,21 @@ public class ListNode
             current = new ListNode(value, current);
         }
 
-        return current;
+        return current ?? throw new ArgumentException(nameof(values));
+    }
+
+    public IList<int> GetArrayFromList()
+    {
+        var values = new List<int>();
+        var pointer = this;
+
+        while (pointer is not null)
+        {
+            values.Add(pointer.val);
+            pointer = pointer.next;
+        }
+
+        return values;
     }
 
     public override string ToString()

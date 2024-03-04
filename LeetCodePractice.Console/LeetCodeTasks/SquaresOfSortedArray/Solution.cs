@@ -1,3 +1,5 @@
+using LeetCodePractice.Console.Utilities;
+
 namespace LeetCodePractice.Console.LeetCodeTasks.SquaresOfSortedArray;
 
 public class Solution
