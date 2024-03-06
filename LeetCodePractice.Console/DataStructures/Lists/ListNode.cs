@@ -27,6 +27,24 @@ public class ListNode
         return current ?? throw new ArgumentException(nameof(values));
     }
 
+    public static ListNode CreateCyclicFromArray(IEnumerable<int> values)
+    {
+        ListNode? current = null;
+        ListNode? last = null;
+
+        foreach (var value in values.Reverse())
+        {
+            current = new ListNode(value, current);
+            last ??= current;
+        }
+
+        if (last is not null)
+        {
+            last.next = current;
+        }
+
+        return current ?? throw new ArgumentException(nameof(values));
+    }
     public IList<int> GetArrayFromList()
     {
         var values = new List<int>();

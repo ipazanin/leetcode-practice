@@ -8,7 +8,7 @@ public static class Program
 {
     public static void Main()
     {
-        foreach (var testCase in LeetCodeTasks.MinimumLengthOfStringAfterDeletingSimilarEnds.Solution.GetTestCases())
+        foreach (var testCase in LeetCodeTasks.LinkedListCycle.ConstantMemorySolution.GetTestCases())
         {
             try
             {
