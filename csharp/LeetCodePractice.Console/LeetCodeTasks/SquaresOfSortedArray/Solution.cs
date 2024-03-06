@@ -7,8 +7,8 @@ public class Solution
 
     public static IEnumerable<TestCase<int[], int[]>> GetTestCases()
     {
-        yield return new TestCase<int[], int[]>([-4, -1, 0, 3, 10], [0, 1, 9, 16, 100], new Solution().SortedSquares);
-        yield return new TestCase<int[], int[]>([-7, -3, 2, 3, 11], [4, 9, 9, 49, 121], new Solution().SortedSquares);
+        yield return new TestCase<int[], int[]>([0, 1, 9, 16, 100], [-4, -1, 0, 3, 10], new Solution().SortedSquares);
+        yield return new TestCase<int[], int[]>([4, 9, 9, 49, 121], [-7, -3, 2, 3, 11], new Solution().SortedSquares);
     }
 
     public int[] SortedSquares(int[] nums)

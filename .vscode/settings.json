@@ -1,5 +1,5 @@
 {
-  "dotnet.defaultSolution": "LeetCodePractice.sln",
+  "dotnet.defaultSolution": "csharp/LeetCodePractice.sln",
   "sarif-viewer.connectToGithubCodeScanning": "off",
   "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles",
   "dotnetAcquisitionExtension.existingDotnetPath": [
