@@ -2,6 +2,9 @@ using LeetCodePractice.Console.Utilities;
 
 namespace LeetCodePractice.Console.LeetCodeTasks.SquaresOfSortedArray;
 
+/// <summary>
+/// https://leetcode.com/problems/squares-of-a-sorted-array/description/
+/// </summary>
 public class Solution
 {
 
