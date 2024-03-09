@@ -29,7 +29,7 @@ mod tests {
     use super::Solution;
 
     #[test]
-    fn get_common() {
+    fn get_common_tests() {
         let test_cases = [
             (2, Vec::from([1, 2, 3]), Vec::from([2, 4])),
             (2, Vec::from([1, 2, 3, 6]), Vec::from([2, 3, 4, 5])),
