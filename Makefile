@@ -9,4 +9,4 @@
 #****************************************************
 
 run::
-	dotnet run --project csharp\LeetCodePractice.Console\LeetCodePractice.Console.csproj
+	dotnet run --project csharp/LeetCodePractice.Console/LeetCodePractice.Console.csproj
