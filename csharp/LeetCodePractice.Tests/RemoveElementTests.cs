@@ -16,7 +16,7 @@ public class RemoveElementsTests
     public static IEnumerable<object[]> Data =>
     [
         [2, new int[] { 3, 2, 2, 3 }, 3],
-        [5, new int [] { 0, 1, 2, 2, 3, 0, 4, 2}, 2],
+        [5, new int [] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2],
         [0, new int [] { 1 }, 1],
         [0, Array.Empty<int>(), 0],
     ];
