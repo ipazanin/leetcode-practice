@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 namespace LeetCodePractice.Console.LeetCodeTasks.CountElementsWithMaxFrequency;
 
 public class Solution
