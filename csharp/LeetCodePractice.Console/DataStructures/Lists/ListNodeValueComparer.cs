@@ -9,7 +9,9 @@ public class ListNodeValueComparer : IEqualityComparer<ListNode>
     public bool Equals(ListNode? x, ListNode? y)
     {
         if (x is null && y is null)
+        {
             return true;
+        }
         else if (x is null || y is null)
         {
             return false;
