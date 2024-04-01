@@ -3,7 +3,7 @@ import unittest
 from python.tasks.remove_element import Solution
 
 
-class TestCalculations(unittest.TestCase):
+class RemoveElementTests(unittest.TestCase):
 
     def test_sum(self):
         test_data = (
